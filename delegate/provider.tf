@@ -6,10 +6,6 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_eks_cluster" "eks" {
-  name = "my-eks-cluster"  # <-- Replace this with your EKS cluster name
-}
-
 data "aws_eks_cluster_auth" "eks" {
   name = data.aws_eks_cluster.eks.name
 }
